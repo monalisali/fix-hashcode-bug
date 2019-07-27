@@ -13,9 +13,9 @@ public class PersonTest {
         Person person = new Person("1");
         person.setAge(20);
 
+
         Assertions.assertEquals(person, new Person("1"));
     }
-
     @Test
     public void testContains() {
         Person person = new Person("1");
@@ -27,3 +27,5 @@ public class PersonTest {
         Assertions.assertTrue(set.contains(person));
     }
 }
+
+
