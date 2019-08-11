@@ -50,16 +50,8 @@ public class Person {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-//        result = 31 * result + (name != null ? name.hashCode() : 0);
-//        result = 31 * result + age;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + age;
         return result;
-    }
-
-
-
-
-    public static void main(String[] args) {
-        Person a = new Person("123456", "张三", 12);
-//        a.contains("")
     }
 }
