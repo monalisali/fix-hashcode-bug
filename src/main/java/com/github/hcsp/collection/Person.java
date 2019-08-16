@@ -1,11 +1,19 @@
 package com.github.hcsp.collection;
 
+import java.util.Objects;
+
 public class Person {
-    /** 身份证号 */
+    /**
+     * 身份证号
+     */
     private final String id;
-    /** 姓名 */
+    /**
+     * 姓名
+     */
     private String name;
-    /** 年龄 */
+    /**
+     * 年龄
+     */
     private int age;
 
     public Person(String id) {
@@ -34,6 +42,11 @@ public class Person {
         this.age = age;
     }
 
+    public String getId() {
+        return id;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -44,14 +57,12 @@ public class Person {
         }
 
         Person person = (Person) o;
-        return id.equals(person.id);
+        return Objects.equals(id, person.getId());
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + age;
         return result;
     }
 }
