@@ -2,7 +2,7 @@ package com.github.hcsp.collection;
 
 public class Person {
     /** 身份证号 */
-    private String id;
+    private final String id;
     /** 姓名 */
     private String name;
     /** 年龄 */
@@ -34,14 +34,6 @@ public class Person {
         this.age = age;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -58,8 +50,8 @@ public class Person {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-//        result = 31 * result + (name != null ? name.hashCode() : 0);
-//        result = 31 * result + age;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + age;
         return result;
     }
 }
