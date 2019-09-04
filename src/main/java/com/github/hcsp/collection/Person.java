@@ -1,7 +1,5 @@
 package com.github.hcsp.collection;
 
-import java.util.Objects;
-
 public class Person {
     /** 身份证号 */
     private final String id;
@@ -44,13 +42,16 @@ public class Person {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
+
         Person person = (Person) o;
-        return Objects.equals(id, person.id);
+        return id.equals(person.id);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + age;
+        return result;
     }
 }
