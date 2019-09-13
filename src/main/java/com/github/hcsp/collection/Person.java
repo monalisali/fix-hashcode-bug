@@ -47,11 +47,10 @@ public class Person {
         return id.equals(person.id);
     }
 
+    //同一个对象应该始终返回相同的hashCode
+    //不能因为修改了属性就返回不同的hashCode
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + age;
-        return result;
+        return id != null ? id.hashCode() : 0;
     }
 }
