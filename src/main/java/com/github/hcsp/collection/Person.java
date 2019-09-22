@@ -50,7 +50,8 @@ public class Person {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        // person 的 name 属性改变了，依然还是原来的对象
+//        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + age;
         return result;
     }
