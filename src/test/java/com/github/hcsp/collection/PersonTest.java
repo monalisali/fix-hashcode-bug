@@ -7,13 +7,22 @@ import org.junit.jupiter.api.Test;
 public class PersonTest {
     @Test
     public void testEquals() {
-        Assertions.assertEquals(new Person("1"), new Person("1"));
-        Assertions.assertNotEquals(new Person("1"), new Person("2"));
+//        Assertions.assertEquals(new Person("1"), new Person("1"));
+//        Assertions.assertNotEquals(new Person("1"), new Person("2"));
+//
+//        Person person = new Person("1");
+//        person.setAge(20);
+//        Assertions.assertEquals(person, new Person("1"));
+
+        Assertions.assertEquals(new Person("1"), new Person("1")); //pass
+        Assertions.assertNotEquals(new Person("1"), new Person("2"));//pass
 
         Person person = new Person("1");
         person.setAge(20);
+        Assertions.assertEquals(person,new Person("1"));//failed: 因为Age不相等
+        Assertions.assertEquals(person, new Person("1",null,20)); //pass
+        Assertions.assertEquals(new Person("1","",20), new Person("1","",20));//pass
 
-        Assertions.assertEquals(person, new Person("1"));
     }
 
     @Test
